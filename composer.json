@@ -30,7 +30,8 @@
         "squizlabs/php_codesniffer": "*",
         "pdepend/pdepend": "^2.5",
         "phpmd/phpmd": "^2.6",
-        "mayflower/php-codebrowser": "^2.0"
+        "mayflower/php-codebrowser": "^2.0",
+        "phing/phing": "^2.16"
     },
     "autoload": {
         "psr-4": {

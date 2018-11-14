@@ -95,6 +95,8 @@
       <path value="$PROJECT_DIR$/vendor/phploc/phploc" />
       <path value="$PROJECT_DIR$/vendor/mayflower/php-codebrowser" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/phing/phing" />
     </include_path>
   </component>
 </project>
