@@ -36,13 +36,13 @@
     </target>
 
     <target name="phpcpd">
-        <phpcpd file="${source}">
+        <phpcpd file="${source}/">
             <formatter type="pmd" outfile="${source}/build/logs/pmd-cpd.xml"/>
         </phpcpd>
     </target>
 
     <target name="phploc">
-        <exec logoutput="true" dir="${source}" command="phploc --log-csv '${source}/build/logs/phploc.csv' '${source}'" escape="false" />
+        <exec logoutput="true" dir="${source}/" command="phploc --log-csv '${source}/build/logs/phploc.csv' '${source}'" escape="false" />
     </target>
 
     <target name="phpcs">
