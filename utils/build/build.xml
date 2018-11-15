@@ -66,13 +66,10 @@
     </target>-->
 
     <target name="phpunit">
-        <phpunit pharlocation="${source}/phpunit">
-        <formatter todir="${source}/tests" type="xml"/>
-            <batchtest>
-            <fileset dir="${source}/"/>
-            </batchtest>
-        </phpunit>
+        <exec logoutput="true" dir="${source}/tests" command="phpunit" escape="false" />
     </target>
+
+
 
     <target name="phpcb">
         <exec logoutput="true" command="phpcb --log '${source}/build/logs' --source '${source}/' --output '${source}/build/code-browser'" escape="false" />
