@@ -66,13 +66,13 @@
     </target>-->
 
     <target name="phpunit">
-        <exec logoutput="true" dir="${source}/tests" command="phpunit" escape="false" />
+        <exec logoutput="true" dir="${source}/tests" command="C:\Users\cedri\AppData\Roaming\Composer\vendor\bin\phpunit.bat" escape="false" />
     </target>
 
 
 
     <target name="phpcb">
-        <exec logoutput="true" command="phpcb --log '${source}/build/logs' --source '${source}/' --output '${source}/build/code-browser'" escape="false" />
+        <exec logoutput="true" command="C:\Users\cedri\AppData\Roaming\Composer\vendor\bin\phpcb.bat --log '${source}/build/logs' --source '${source}/' --output '${source}/build/code-browser'" escape="false" />
     </target>
 
 
