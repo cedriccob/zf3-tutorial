@@ -27,14 +27,15 @@
         <logger type="jdepend-chart" outfile="${project.basedir}/build/pdepend/dependencies.svg" />
         <logger type="overview-pyramid" outfile="${project.basedir}/build/pdepend/overview-pyramid.svg" />
     </phpdepend>
-    </target>
-
-
-    <target name="qa" description="Lance les outils d'analyse">
-        <phingcall target="premier-outil" />
+     <phingcall target="premier-outil" />
         <phingcall target="second-outil" />
         <phingcall target="troisime-outil" />
     </target>-->
+
+
+    <target name="qa" description="Lance les outils d'analyse">
+
+    </target>
 
 
 </project>
