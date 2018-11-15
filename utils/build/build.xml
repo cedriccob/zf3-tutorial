@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="zf3-tutorial" default="ci" basedir="../../">
-    <property name="source" value="Zend with tuto jenkins" />
+<project name="zf3-tutorial" default="ci" basedir="../../../">
+    <property name="source" value="build" />
 
     <target name="ci"
             description="Tâche principale d'intégration continue"
