@@ -31,7 +31,8 @@
         "pdepend/pdepend": "^2.5",
         "phpmd/phpmd": "^2.6",
         "mayflower/php-codebrowser": "^2.0",
-        "phing/phing": "^2.16"
+        "phing/phing": "^2.16",
+        "phpunit/phpunit": "^7.4"
     },
     "autoload": {
         "psr-4": {

@@ -35,13 +35,63 @@
         </phpmd>
     </target>
 
+    <target name="phpcpd">
+        <phpcpd file="${source}">
+            <formatter type="pmd" outfile="${source}/build/logs/pmd-cpd.xml"/>
+        </phpcpd>
+    </target>
+
+    <target name="phploc">
+        <exec logoutput="true" dir="${source}" command="phploc --log-csv '${source}/build/logs/phploc.csv' '${source}'" escape="false" />
+    </target>
+
+    <target name="phpcs">
+        <phpcodesniffer standard="Zend">
+            <fileset dir="${source}">
+                <include name="**/*.php"/>
+            </fileset>
+            <formatter type="checkstyle" outfile="${source}/build/logs/checkstyle.xml"/>
+        </phpcodesniffer>
+    </target>
+
+    <target name="phpdoc">
+        <phpdoc title="API Documentation"
+                destdir="${source}/build/api"
+                sourcecode="false"
+                output="HTML:Smarty:PHP">
+            <fileset dir="$${source}/">
+                <include name="**/*.php"/>
+            </fileset>
+            <projdocfileset dir=".">
+                <include name="README"/>
+                <include name="INSTALL"/>
+                <include name="CHANGELOG"/>
+            </projdocfileset>
+        </phpdoc>
+    </target>
+
+    <target name="phpunit">
+        <formatter todir="${source}/tests" type="xml"/>
+    </target>
+
+    <target name="phpcb">
+        <exec logoutput="true" command="phpcb --log '${source}/build/logs' --source '${source}/' --output '${source}/build/code-browser'" escape="false" />
+    </target>
+
+
+
 
 
 
     <target name="qa" description="Lance les outils d'analyse">
         <phingcall target="pdepend" />
         <phingcall target="phpmd" />
-
+        <phingcall target="phpcpd" />
+        <phingcall target="phploc" />
+        <phingcall target="phpcs" />
+        <phingcall target="phpdoc" />
+        <phingcall target="phpunit" />
+        <phingcall target="phpcb" />
     </target>
 
 
