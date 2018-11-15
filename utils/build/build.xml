@@ -30,7 +30,7 @@
     </target>
 
     <target name="phpmd">
-        <phpmd file="${source}/www">
+        <phpmd file="${source}/">
             <formatter type="xml" outfile="${source}/build/phpmd.xml" />
         </phpmd>
     </target>
