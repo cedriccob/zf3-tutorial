@@ -68,6 +68,9 @@
     <target name="phpunit">
         <phpunit>
         <formatter todir="${source}/tests" type="xml"/>
+            <batchtest>
+            <fileset dir="${source}/"/>
+            </batchtest>
         </phpunit>
     </target>
 
