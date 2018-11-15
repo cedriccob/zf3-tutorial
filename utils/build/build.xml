@@ -35,24 +35,24 @@
         </phpmd>
     </target>
 
-    <!--<target name="phpcpd">
+    <target name="phpcpd">
         <phpcpd file="${source}/">
             <formatter type="pmd" outfile="${source}/build/logs/pmd-cpd.xml"/>
         </phpcpd>
-    </target>-->
-
-    <target name="phploc">
-        <exec logoutput="true" dir="${source}/" command="phploc --log-csv '${source}/build/logs/phploc.csv' '${source}'" escape="false" />
     </target>
 
-    <!--<target name="phpcs">
+    <target name="phploc">
+        <exec logoutput="true" dir="${source}/" command="C:\Users\cedri\AppData\Roaming\Composer\vendor\bin\phploc.bat --log-csv '${source}/build/logs/phploc.csv' '${source}'" escape="false" />
+    </target>
+
+    <target name="phpcs">
         <phpcodesniffer standard="Zend">
             <fileset dir="${source}">
                 <include name="**/*.php"/>
             </fileset>
             <formatter type="checkstyle" outfile="${source}/build/logs/checkstyle.xml"/>
         </phpcodesniffer>
-    </target>-->
+    </target>
 
    <!-- <target name="phpdoc">
         <phpdoc2 title="API Documentation"
@@ -83,9 +83,9 @@
     <target name="qa" description="Lance les outils d'analyse">
         <phingcall target="pdepend" />
         <phingcall target="phpmd" />
-      <!--  <phingcall target="phpcpd" />-->
+        <phingcall target="phpcpd" />
         <phingcall target="phploc" />
-        <!--<phingcall target="phpcs" />-->
+        <phingcall target="phpcs" />
       <!--  <phingcall target="phpdoc" />-->
         <phingcall target="phpunit" />
         <phingcall target="phpcb" />
