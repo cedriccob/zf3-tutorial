@@ -54,21 +54,16 @@
         </phpcodesniffer>
     </target>-->
 
-    <target name="phpdoc">
-        <phpdoc title="API Documentation"
+   <!-- <target name="phpdoc">
+        <phpdoc2 title="API Documentation"
                 destdir="${source}/build/api"
-                sourcecode="false"
-                output="HTML:Smarty:PHP">
-            <fileset dir="$${source}/">
+                 template="responsive-twig">
+            <fileset dir="${source}/">
                 <include name="**/*.php"/>
             </fileset>
-            <projdocfileset dir=".">
-                <include name="README"/>
-                <include name="INSTALL"/>
-                <include name="CHANGELOG"/>
-            </projdocfileset>
-        </phpdoc>
-    </target>
+
+        </phpdoc2>
+    </target>-->
 
     <target name="phpunit">
         <formatter todir="${source}/tests" type="xml"/>
@@ -89,7 +84,7 @@
       <!--  <phingcall target="phpcpd" />-->
         <phingcall target="phploc" />
         <!--<phingcall target="phpcs" />-->
-        <phingcall target="phpdoc" />
+      <!--  <phingcall target="phpdoc" />-->
         <phingcall target="phpunit" />
         <phingcall target="phpcb" />
     </target>
