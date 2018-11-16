@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="zf3-tutorial" default="ci" basedir="../">
-    <property name="source" value="Zend tuto" />
+<project name="TestJenkins" default="ci" basedir="../../..">
+    <property name="source" value="src" />
 
     <target name="ci"
             description="Tâche principale d'intégration continue"
@@ -8,87 +8,11 @@
     />
 
     <target name="clean" description="Vide les répertoires d'artefacts">
-        <delete dir="${source}/build/api" />
-        <delete dir="${source}/build/code-browser" />
-        <delete dir="${source}/build/coverage" />
-        <delete dir="${source}/build/logs" />
-        <delete dir="${source}/build/pdepend" />
-        <mkdir dir="${source}/build/api" />
-        <mkdir dir="${source}/build/code-browser" />
-        <mkdir dir="${source}/build/coverage" />
-        <mkdir dir="${source}/build/logs" />
-        <mkdir dir="${source}/build/pdepend" />
+
     </target>
-
-    <target name="pdepend">
-    <phpdepend file="${source}/">
-        <logger type="jdepend-xml" outfile="${source}/build/logs/jdepend.xml" />
-        <logger type="jdepend-chart" outfile="${source}/build/pdepend/dependencies.svg" />
-        <logger type="overview-pyramid" outfile="${source}/build/pdepend/overview-pyramid.svg" />
-    </phpdepend>
-    </target>
-
-    <target name="phpmd">
-        <phpmd file="${source}/">
-            <formatter type="xml" outfile="${source}/build/phpmd.xml" />
-        </phpmd>
-    </target>
-
-    <target name="phpcpd">
-        <phpcpd file="${source}/">
-            <formatter type="pmd" outfile="${source}/build/logs/pmd-cpd.xml"/>
-        </phpcpd>
-    </target>
-
-    <target name="phploc">
-        <exec logoutput="true" dir="${source}/module" command="C:\Users\cedri\AppData\Roaming\Composer\vendor\bin\phploc.bat --log-csv '${source}/build/logs/phploc.csv' '${source}'" escape="false" />
-    </target>
-
-    <target name="phpcs">
-        <phpcodesniffer standard="Zend">
-            <fileset dir="${source}">
-                <include name="**/*.php"/>
-            </fileset>
-            <formatter type="checkstyle" outfile="${source}/build/logs/checkstyle.xml"/>
-        </phpcodesniffer>
-    </target>
-
-   <!-- <target name="phpdoc">
-        <phpdoc2 title="API Documentation"
-                destdir="${source}/build/api"
-                 template="responsive-twig">
-            <fileset dir="${source}/">
-                <include name="**/*.php"/>
-            </fileset>
-
-        </phpdoc2>
-    </target>-->
-
-    <target name="phpunit">
-        <exec logoutput="true" dir="${source}/tests" command="C:\Users\cedri\AppData\Roaming\Composer\vendor\bin\phpunit.bat" escape="false" />
-    </target>
-
-
-
-    <target name="phpcb">
-        <exec logoutput="true" command="C:\Users\cedri\AppData\Roaming\Composer\vendor\bin\phpcb.bat --log '${source}/build/logs' --source '${source}/' --output '${source}/build/code-browser'" escape="false" />
-    </target>
-
-
-
-
-
 
     <target name="qa" description="Lance les outils d'analyse">
-       <!-- <phingcall target="pdepend" />
-        <phingcall target="phpmd" />
-        <phingcall target="phpcpd" />
-        <phingcall target="phploc" />
-        <phingcall target="phpcs" />
-      <phingcall target="phpdoc" />
-        <phingcall target="phpunit" />
-        <phingcall target="phpcb" />-->
-    </target>
 
+    </target>
 
 </project>
