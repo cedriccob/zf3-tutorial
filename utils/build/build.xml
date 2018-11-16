@@ -42,7 +42,7 @@
     </target>
 
     <target name="phploc">
-        <exec logoutput="true" dir="${source}/" command="C:\Users\cedri\AppData\Roaming\Composer\vendor\bin\phploc.bat --log-csv '${source}/build/logs/phploc.csv' '${source}'" escape="false" />
+        <exec logoutput="true" dir="${source}/module" command="C:\Users\cedri\AppData\Roaming\Composer\vendor\bin\phploc.bat --log-csv '${source}/build/logs/phploc.csv' '${source}'" escape="false" />
     </target>
 
     <target name="phpcs">
@@ -81,14 +81,14 @@
 
 
     <target name="qa" description="Lance les outils d'analyse">
-        <phingcall target="pdepend" />
+       <!-- <phingcall target="pdepend" />
         <phingcall target="phpmd" />
         <phingcall target="phpcpd" />
         <phingcall target="phploc" />
         <phingcall target="phpcs" />
-      <!--  <phingcall target="phpdoc" />-->
+      <phingcall target="phpdoc" />
         <phingcall target="phpunit" />
-        <phingcall target="phpcb" />
+        <phingcall target="phpcb" />-->
     </target>
 
 
